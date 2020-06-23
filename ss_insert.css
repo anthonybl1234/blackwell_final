@@ -1,0 +1,28 @@
+.style1
+{
+    background-color: lightsteelblue;
+}
+.map1
+{
+    background-image: url("map1.jpg");    
+}
+
+.style2
+{
+    background-color: skyblue;
+
+}
+.map2
+{
+    background-image: url("map2.jpg");    
+}
+
+.style3
+{
+    background-color: snow;
+
+}
+.map3
+{
+    background-image: url("map3.jpg");        
+}

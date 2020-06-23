@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>      
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Locations</title>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">  
+    <link rel="stylesheet" href="altPages.css">  
+    <script src="script.js" async></script>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img src="header_logo.jpg" alt="logoImg">
+        </div>
+        <div class="child_header">
+            <div class="logo_text">
+                <h2 >
+                    Locations
+                </h2>
+            </div>
+
+            <ul class="nav">
+                <a href="index.html">
+                    <li>Home</li>
+                </a>
+                <a href="quote.html">
+                    <li>Get Quote</li>
+                </a>
+                <a href="services.html">
+                    <li>Services</li>
+                </a>
+                <a href="locations.html">
+                    <li> Locations</li>
+                </a>
+            </ul>
+        </div>
+    </header>
+    <div id="container">
+        <div id="center">
+        <a href="quote.html"><input id="quote_bttn" type="button" value="Get a Quote"> </a>
+        </div>
+     </div>
+
+     <div id ="locationMain">
+            <div class="location" >              
+                <p id="location0">  <br>MyPlumbing <br>
+                    718 Talbot Lane<br>
+                    Bangor, ME 04401  <br></p>                    
+            </div>
+            <div class="location" >                
+                <p id="location1">  <br>MyPlumbing <br>
+                    540 Washington Street<br>
+                    Madison, ME 35758  <br></p>                    
+            </div>
+            <div class="location" >                
+                <p id="location2">  <br>MyPlumbing <br>
+                    9114 Aspen Rd.<br>
+                    Severna Park, ME 21164  <br></p>                    
+            </div>            
+     </div>     
+
+     <div id="displayLocation">
+        <div id="displayMap" class="default">
+            
+        </div>
+     </div>                
+
+    <footer>
+        <address id="address">
+            <p>MyPlumbing <br>
+                718 Talbot Lane<br>
+                Bangor, ME 04401</p>
+        </address>
+        <!-- <div id="socials">
+            <ul>
+                <li><a href="#"><img src="youtube.png"></a></li>
+                <li><a href="#"><img src="facebook.png"></a></li>
+                <li><a href="#"><img src="instagram.png"></a></li>
+                <li><a href="#"><img src="twitter.png"></a></li>
+            </ul>
+        </div> -->
+        <div id="contact">
+            <p>Phone: (207) 265-9193<br>
+                Email: <a href="#">myplumbing@gmail.com</a></p>
+        </div>
+    
+    </footer>
+    <script>
+        //4-a mouseover event
+        var qButton = document.getElementById("quote_bttn");
+
+        qButton.addEventListener("mouseover",hoverButtonLarger);
+        qButton.addEventListener("mouseout",hoverButtonSmaller);
+
+        function hoverButtonLarger(){
+        $(this).css('width','219px');
+        $(this).css('height','50px');
+        }
+        function hoverButtonSmaller(){
+        $(this).css('width','175px');
+        $(this).css('height','40px');
+        }
+
+        var locations = document.querySelectorAll(".location p");      
+            //jquery mousover() and css()
+        for(var i = 0;i<locations.length;i++){
+            $(locations[i]).mouseover(function(){
+                $(this).css('background-color','lightgrey');
+                $(this).css('cursor','pointer');
+            });
+            $(locations[i]).mouseleave(function(){
+                $(this).css('background-color','white');
+            });
+        }
+     </script>
+     <script>
+         
+        var locations = document.querySelectorAll(".location p");      
+            //jquery mousover() and css()
+        for(var i = 0;i<locations.length;i++){
+            $(locations[i]).mouseover(function(){
+                var id = $(this).attr('id');
+                console.log(id);
+            });
+            $(locations[i]).click(function(){  
+                var map = document.getElementById('displayMap');  
+                var id = $(this).attr('id');                            
+                if(id === "location0"){                    
+                    map.classList.add("map1");
+                    map.classList.remove("map2","map3");
+                    
+                }
+                if(id === "location1"){                    
+                    map.classList.add("map2");
+                    map.classList.remove("map1","map3");
+                }
+                if(id==="location2"){                    
+                    map.classList.add("map3");
+                    map.classList.remove("map2","map1");
+                }
+            });            
+        }        
+        document.onload=addLink();
+         function addLink(){               
+         var newLink = document.createElement('link');
+         newLink.rel = 'stylesheet';
+         newLink.href = 'ss_insert.css';
+         document.head.appendChild(newLink);
+        }
+        
+     </script>
+</body>
+</html>

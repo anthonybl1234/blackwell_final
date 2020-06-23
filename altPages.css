@@ -1,0 +1,76 @@
+
+/* services- main div */
+.services_main_container{
+    content: "";
+  display: table;
+  clear: both;
+  width: 100%;   
+}
+.services_sub h1{
+    text-align: center;
+}
+.services_sub h1,.services_sub h3,.services_sub P{
+    margin-left: 10px; 
+    width: 90%;
+}
+/* location div */
+#locationMain{
+    content: "";
+    display: table;
+    clear: both;
+    width: 100%;
+    min-width: 900px;
+    border-bottom: 1px solid #4c7177; 
+    
+}
+.location p{
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+.location{
+    float: left;
+    width: 33.1%;
+    padding: 1px;    
+    text-align: center;        
+}
+
+/* map div */
+#displayLocation{
+    height: 500px;
+    position: relative;
+    
+}
+.default{
+    background-image: url("map1.jpg");
+}
+#displayMap{
+    position: absolute;
+    height: 80%;
+    width: 52%;         
+    margin-left: 24%;
+    bottom: 10%;
+}
+
+/* quote form */
+.quoteForm{
+    padding: 3%;    
+    height: 700px;
+    content: "";
+    display: table;
+    clear: both;
+    width: 100%;  
+}
+.quoteForm form{
+    height: 100%;
+    
+
+}
+.formColumn :first-child{
+    padding-left: 10%;
+}
+.formColumn{
+    width: 45%;
+    float: left;
+    
+    padding: 1px;    
+}
